@@ -20,7 +20,7 @@ def harvest(code, oai_url, md_prefix, oai_set):
                     '-m{}'.format(md_prefix),
                     '-s{}'.format(oai_set),
                     '-o{}'.format(ofile)
-                    ], stdout=subprocess.DEVNULL)
+                    ])
 
 
 for provider in OAI_DICT:

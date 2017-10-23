@@ -47,7 +47,7 @@ OAI_DICT = {
 #                         'mods', ['fsu_admiralleighpapers', 'fsu_hpuaanniegilliamscrapbook', 'fsu_susanbradfordeppespapers'])
 # }
 
-OUT_PATH = '~/'
+OUT_PATH = '/home/mrmiguez/OAI_export/'
 
 # local test
 # OUT_PATH = 'c:\\Users\\mmiguez\\bin\\'

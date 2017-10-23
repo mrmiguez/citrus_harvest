@@ -19,6 +19,7 @@ def getFile(serverString, command, verbose=1, sleepTime=0):
     if sleepTime:
         time.sleep(sleepTime)
     remoteAddr = serverString + '?verb=%s' % command
+    #print remoteAddr #test
     if verbose:
         print "\r", "getFile ...'%s'" % remoteAddr[-90:]
     headers = {'User-Agent': 'OAIHarvester/2.0', 'Accept': 'text/html',
@@ -93,7 +94,7 @@ if __name__ == "__main__":
 
     ofile.write('<repository xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" \
      xmlns:dc="http://purl.org/dc/elements/1.1/" \
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instanc">\n')  # wrap list of records with this
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">\n')  # wrap list of records with this
 
     if oaiSet:
         verbOpts += '&set=%s' % oaiSet
@@ -106,7 +107,7 @@ if __name__ == "__main__":
     else:
         verbOpts += '&metadataPrefix=%s' % 'oai_dc'
 
-    print "Using url:%s" % serverString + '?ListRecords' + verbOpts
+    print "Using url:%s" % serverString + '?verb=ListRecords' + verbOpts
 
     data = getFile(serverString, 'ListRecords' + verbOpts)
 
