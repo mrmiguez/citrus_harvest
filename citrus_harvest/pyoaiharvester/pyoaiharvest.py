@@ -116,11 +116,12 @@ if __name__ == "__main__":
     while data:
         events = xml.dom.pulldom.parseString(data)
         for (event, node) in events:
-            if event == "START_ELEMENT" and node.tagName == 'record':
-                events.expandNode(node)
-                node.writexml(ofile)
-                recordCount += 1
-        mo = re.search('<resumptionToken[^>]*>(.*)</resumptionToken>', data)
+            if event == "START_ELEMENT":
+                if node.tagName == 'record' or node.tagName == 'oai:record':
+                    events.expandNode(node)
+                    node.writexml(ofile)
+                    recordCount += 1
+        mo = re.search('[^ ][oai:]?resumptionToken[^/]*>(.*?)</', data)
         if not mo:
             break
         data = getFile(serverString, "ListRecords&resumptionToken=%s" % mo.group(1))

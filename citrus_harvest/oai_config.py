@@ -5,7 +5,7 @@ DataProvider = namedtuple('DataProvider', 'code oai_url mdprefix oai_sets')
 OAI_DICT = {
     'fiu': DataProvider('fiu', 'https://repox.library.miami.edu/repox/OAIHandler',
                         'oai_dc',
-                        ['fsu_bzs', 'fiu_civil', 'fiu_dad', 'fiu_fls', 'fiu_iif',
+                        ['fiu_bzs', 'fiu_civil', 'fiu_dad', 'fiu_fls', 'fiu_iif',
                          'fiu_lgcf', 'fiu_lter', 'fiu_phc', 'fiu_ps', 'fiu_two',
                          'fiu_vms']),
     'um': DataProvider('um', 'https://repox.library.miami.edu/repox/OAIHandler',
@@ -41,11 +41,16 @@ OAI_DICT = {
                         'mods', ['fsu_digital_library'])
 }
 
-# testing dict
+# # testing dict
 # OAI_DICT = {
-#     'fsu': DataProvider('fsu', 'https://fsu.digital.flvc.org/oai2',
-#                         'mods', ['fsu_admiralleighpapers', 'fsu_hpuaanniegilliamscrapbook', 'fsu_susanbradfordeppespapers'])
-# }
+    # 'fiu': DataProvider('fiu', 'https://repox.library.miami.edu/repox/OAIHandler',
+                        # 'oai_dc', ['fiu_bzs', 'fiu_civil']),
+    # 'um': DataProvider('um', 'https://repox.library.miami.edu/repox/OAIHandler',
+                       # 'oai_qdc',
+                       # ['um_arc5100', 'um_arc5200', 'um_arc5300', 'um_arcdigital']),                        
+    # 'fsu': DataProvider('fsu', 'https://fsu.digital.flvc.org/oai2',
+                        # 'mods', ['fsu_admiralleighpapers'])
+            # }
 
 OUT_PATH = '/home/mrmiguez/OAI_export/'
 
