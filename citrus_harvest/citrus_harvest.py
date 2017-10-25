@@ -3,6 +3,7 @@ import datetime
 import subprocess
 from oai_config import OAI_DICT, OUT_PATH
 
+here = os.path.abspath(os.path.dirname(__file__))
 
 def harvest(code, oai_url, md_prefix, oai_set):
     '''
@@ -15,7 +16,7 @@ def harvest(code, oai_url, md_prefix, oai_set):
     if not os.path.isdir(OUT_PATH + code):
         os.mkdir(OUT_PATH + code)
     ofile = OUT_PATH + code + '/' + oai_set + '_' + datetime.date.isoformat(datetime.date.today()) + '.xml'
-    subprocess.run(['pyoaiharvester/pyoaiharvest.py',
+    subprocess.run([os.path.join(here, 'pyoaiharvester/pyoaiharvest.py'),
                     '-l{}'.format(oai_url),
                     '-m{}'.format(md_prefix),
                     '-s{}'.format(oai_set),
