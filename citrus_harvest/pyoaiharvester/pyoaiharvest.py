@@ -92,9 +92,12 @@ if __name__ == "__main__":
 
     ofile = codecs.lookup('utf-8')[-1](file(outFileName, 'wb'))
 
-    ofile.write('<repository xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" \
+    ofile.write('<repository xmlns="http://www.openarchives.org/OAI/2.0/" \
+     xmlns:oai="http://www.openarchives.org/OAI/2.0/" \
+     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" \
      xmlns:dc="http://purl.org/dc/elements/1.1/" \
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">\n')  # wrap list of records with this
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" \
+     xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">\n')  # wrap list of records with this
 
     if oaiSet:
         verbOpts += '&set=%s' % oaiSet
